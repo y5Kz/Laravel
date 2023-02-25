@@ -4,7 +4,7 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class ReqData extends FormRequest
+class RequeData extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -24,7 +24,7 @@ class ReqData extends FormRequest
     public function rules()
     {
         return [
-            'req' => 'max:20',
+            'req' => 'required',
         ];
     }
 }

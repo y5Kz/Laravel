@@ -100,13 +100,30 @@ class PostController extends Controller
 
 
 
-        $rep = $reps->with('user')->where('post_id', '=', $post->id)->paginate(100);
+        $gameid = $request->input('game_id');
+        $post = new post;
+
+        if (empty($gameid)) {
+            $pos = $post->where('del_flg', '=', 0)->orderby('created_at', 'DESC')->paginate(12);
+        } else {
+            $pos = $post->where('del_flg', '=', 0)->where('game_id', '=', $gameid)->orderby('created_at', 'DESC')->paginate(12);
+        }
+
+        $game = new game;
+        $gam = $game->all();
 
 
-        return view('posts.detail', [
-            'post' => $post,
-            'rep' => $rep,
+        return view('posts.index', [
+            'games' => $gam,
+            'posts' => $pos,
+            'request' => $request,
         ]);
+
+
+        // return view('posts.index', [
+        //     'post' => $post,
+        //     'rep' => $rep,
+        // ]);
     }
 
     /**

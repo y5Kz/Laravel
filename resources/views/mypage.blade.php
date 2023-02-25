@@ -42,18 +42,18 @@
       </tr>
     </tbody>
   </table>
-  <div class='panel-body'>
-    @if($errors->any())
-    <div class='alert alert-danger'>
-      <ul>
-        @foreach($errors->all() as $message)
-        <li>{{ $message }}</li>
-        @endforeach
-      </ul>
-    </div>
-    @endif
-  </div>
   <form action="{{ route('mys.store')}}" method="post">
+    <div class='panel-body'>
+      @if($errors->any())
+      <div class='alert alert-danger'>
+        <ul>
+          @foreach($errors->all() as $message)
+          <li>{{ $message }}</li>
+          @endforeach
+        </ul>
+      </div>
+      @endif
+    </div>
     @csrf
     <div class="form-group">
       <label for="yobo">新ゲームタイトルリクエスト</label>

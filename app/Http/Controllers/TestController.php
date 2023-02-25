@@ -23,8 +23,9 @@ class TestController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index(Request $request)
+    public function index()
     {
+        return view('my.req');
     }
 
     /**
@@ -45,7 +46,6 @@ class TestController extends Controller
      */
     public function store(Request $request)
     {
-   
     }
 
     /**

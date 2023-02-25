@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-use App\Http\Requests\ReqData;
+use App\Http\Requests\RequeData;
 
 use App\Http\Requests\NameData;
 
@@ -69,7 +69,7 @@ class MyController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(ReqData $request)
+    public function store(RequeData $request)
     {
         $req = new req;
         $req->req = $request->yobo;
