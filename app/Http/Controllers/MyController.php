@@ -72,7 +72,7 @@ class MyController extends Controller
     public function store(RequeData $request)
     {
         $req = new req;
-        $req->req = $request->yobo;
+        $req->req = $request->req;
         $req->user_id = Auth::user()->id;
 
 

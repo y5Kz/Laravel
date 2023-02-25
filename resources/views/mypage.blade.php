@@ -56,8 +56,8 @@
     </div>
     @csrf
     <div class="form-group">
-      <label for="yobo">新ゲームタイトルリクエスト</label>
-      <textarea class="form-control" name='yobo' id="exampleFormControlTextarea1" rows="1"></textarea>
+      <label for="req">新ゲームタイトルリクエスト</label>
+      <textarea class="form-control" name='req' id="exampleFormControlTextarea1" rows="1"></textarea>
       <div class='row justify-content-around mt-2 mb-5'>
         <button type="submit" class="btn btn-outline-success">送信</button>
       </div>

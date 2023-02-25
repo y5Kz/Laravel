@@ -24,7 +24,7 @@ class RequeData extends FormRequest
     public function rules()
     {
         return [
-            'req' => 'required',
+            'req' => 'required|max:20',
         ];
     }
 }
