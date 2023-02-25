@@ -20,12 +20,9 @@ $(function () {
         })
             //通信が成功したとき
             .done((res) => {
-                console.log(res.commentData['reply']);
-                console.log(res.commentData['user_id']);
-                console.log(res.commentData['created_at']);
                 var html = ` 
                                     <tr>
-                                    <td scope="col" class='text-center'>${res.commentData['user_id']}<br>${res.commentData['reply']}<br>${res.commentData['created_at']}</td>
+                                    <td scope="col" class='text-center'>${res.commentData.user['name']}<br>${res.commentData['reply']}<br>${res.commentData['created_at']}</td>
                                     </tr>
                                 `;
 

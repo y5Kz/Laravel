@@ -38,7 +38,8 @@ class AjaxController extends Controller
         $reply = $rep->id;
 
 
-        $commentData = Rep::find($reply);
+        $commentData = Rep::with('user')->find($reply);
+
 
         $json = ["commentData" => $commentData];
 
