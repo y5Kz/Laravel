@@ -27,22 +27,44 @@ class PostController extends Controller
      */
     public function index(Request $request)
     {
-        $gameid = $request->input('game_id');
-        $post = new post;
+        // $gameid = $request->input('game_id');
+        // $post = new post;
 
-        if (empty($gameid)) {
-            $pos = $post->where('del_flg', '=', 0)->orderby('created_at', 'DESC')->paginate(12);
-        } else {
-            $pos = $post->where('del_flg', '=', 0)->where('game_id', '=', $gameid)->orderby('created_at', 'DESC')->paginate(12);
+        // if (empty($gameid)) {
+        //     $pos = $post->where('del_flg', '=', 0)->orderby('created_at', 'DESC')->paginate(12);
+        // } else {
+        //     $pos = $post->where('del_flg', '=', 0)->where('game_id', '=', $gameid)->orderby('created_at', 'DESC')->paginate(12);
+        // }
+
+        // $game = new game;
+        // $gam = $game->all();
+
+
+        // return view('posts.index', [
+        //     'games' => $gam,
+        //     'posts' => $pos,
+        //     'request' => $request,
+        // ]);
+
+        $gameid = $request->input('game_id');
+        $title = $request->input('title');
+        $post = Post::where('del_flg', 0);
+
+
+        if ($gameid) {
+            $post->where('game_id', $gameid);
+        }
+        if ($title) {
+            $post->where('title', 'LIKE', "%{$title}%");
         }
 
-        $game = new game;
-        $gam = $game->all();
+        $post = $post->orderby('created_at', 'DESC')->paginate(10);
 
+        $game = Game::all();
 
         return view('posts.index', [
-            'games' => $gam,
-            'posts' => $pos,
+            'games' => $game,
+            'posts' => $post,
             'request' => $request,
         ]);
     }

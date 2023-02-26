@@ -37,4 +37,10 @@ Route::group(['middleware' => 'auth'], function () {
     Route::post('/contribution', 'AjaxController')->name('ajax.button');
 
     Route::post('/update/{{$user[id]}}', 'UpController')->name('edit.name');
+
+    // Route::prefix('user/theme')->middleware('auth')->group(function () {
+
+    //     Route::get('edit', [ThemeController::class, 'edit'])->name('user.theme.edit');
+    //     Route::put('/', [ThemeController::class, 'update'])->name('user.theme.update'); ダークモード今後実装したい
+    // });
 });

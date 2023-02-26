@@ -6,9 +6,9 @@
         <table class="table">
             <thead>
                 <tr>
-                    <th scope="col" class='text-center col-md-4'><a href="{{ route('users.index') }}">ユーザ管理</a></th>
-                    <th scope="col" class='text-center col-md-4'>投稿管理</th>
-                    <th scope="col" class='text-center col-md-4'><a href="{{ route('reqs.index') }}">要望管理</a></th>
+                    <th scope="col" class='text-center col-md-4'><a href="{{ route('users.index') }}" style="color:lime">ユーザ管理</a></th>
+                    <th scope="col" class='text-center col-md-4' style="color:white">投稿管理</th>
+                    <th scope="col" class='text-center col-md-4'><a href="{{ route('reqs.index') }}" style="color:lime">要望管理</a></th>
                 </tr>
             </thead>
         </table>
@@ -34,23 +34,21 @@
                     <input type="text" class="form-control" id="exampleFormControlInput1" name="user_name" placeholder="表示名" @if(isset($request->user_name)) value="{{ $request->user_name }}" @endif>
                 </div>
                 <div class='row justify-content-center'>
-                    <button type='submit' class='btn btn-outline-success mt-1'>検索</button>
+                    <button type='submit' class='btn btn-outline-success mt-1' style="color:lime">検索</button>
                 </div>
             </form>
         </div>
         <table class="table">
             <thead>
                 <tr>
-                    <th scope="col" class='text-center col-md-12'>&emsp;&emsp;&emsp;投稿一覧</th>
+                    <th scope="col" class='text-center col-md-12' style="color:white">&emsp;&emsp;&emsp;&emsp;&emsp;投稿一覧</th>
                 </tr>
             </thead>
             <tbody>
                 @foreach($posts as $post)
                 <tr>
-                    <th scope='col'>
-                        <a href="{{ route('posts.show', ['post' => $post['id']]) }}">{{ $post['title'] }}</a>
-                    </th>
-                    <th scope='col' class='text-right'>
+                    <th scope='col' class='list'>
+                        <a href="{{ route('posts.show', ['post' => $post['id']]) }}" style="color:lime">{{ $post['title'] }}</a>
                         <form action="{{route('posts.destroy', ['post' => $post['id']]) }}" method="post" class="float-right">
                             @csrf
                             @method('delete')
@@ -60,7 +58,7 @@
                 </tr>
                 @endforeach
                 <tr>
-                    <th scope='col'>
+                    <th scope='col' class="row justify-content-center">
                         {{ $posts->links() }}
                     </th>
                 </tr>
@@ -69,3 +67,8 @@
     </div>
 </div>
 @endsection
+<style>
+    .list:hover {
+        background-color: #003b19;
+    }
+</style>

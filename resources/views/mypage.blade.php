@@ -2,7 +2,7 @@
 @section('content')
 <div class="container">
   <div class="row justify-content-center mb-5">
-    <a href="{{ route('mys.edit', Auth::user()->id) }}">{{ $user->name }}</a>
+    <a href="{{ route('mys.edit', Auth::user()->id) }}" style="color:lime">{{ $user->name }}</a>
   </div>
   <div class="row justify-content-center">
     <form action="" method="get">
@@ -17,26 +17,26 @@
         @endforeach
       </select>
       <div class='row justify-content-center'>
-        <button type='submit' class='btn btn-outline-success mt-3 mb-3'>検索</button>
+        <button type='submit' class='btn btn-outline-success mt-3 mb-3' style="color:lime">検索</button>
       </div>
     </form>
   </div>
   <table class="table">
     <thead>
       <tr>
-        <th scope="col" class='text-center'>作成した投稿</th>
+        <th scope="col" class='text-center' style="color:white">作成した投稿</th>
       </tr>
     </thead>
     <tbody>
       @foreach($posts as $post)
       <tr>
-        <th scope='col'>
-          <a href="{{ route('posts.show', ['post' => $post['id']]) }}">{{ $post['title'] }}</a>
+        <th scope='col' class='list'>
+          <a href="{{ route('posts.show', ['post' => $post['id']]) }}" style="color:lime">{{ $post['title'] }}</a>
         </th>
       </tr>
       @endforeach
       <tr>
-        <th scope='col'>
+        <th scope='col' class="row justify-content-center">
           {{ $posts->links() }}
         </th>
       </tr>
@@ -59,9 +59,14 @@
       <label for="req">新ゲームタイトルリクエスト</label>
       <textarea class="form-control" name='req' id="exampleFormControlTextarea1" rows="1"></textarea>
       <div class='row justify-content-around mt-2 mb-5'>
-        <button type="submit" class="btn btn-outline-success">送信</button>
+        <button type="submit" class="btn btn-outline-success" style="color:lime">送信</button>
       </div>
     </div>
   </form>
 </div>
 @endsection
+<style>
+  .list:hover {
+    background-color: #003b19;
+  }
+</style>

@@ -17,7 +17,7 @@
         <table class="table">
             <thead>
                 <tr>
-                    <th scope="col" class='text-center'>新規投稿</th>
+                    <th scope="col" class='text-center' style="color:white">新規投稿</th>
                 </tr>
             </thead>
         </table>
@@ -44,7 +44,7 @@
                 <input id="image" type="file" name="image">
             </div>
             <div class='row justify-content-around mt-2 mb-5'>
-                <button type="submit" class="btn btn-outline-success">投稿</button>
+                <button type="submit" class="btn btn-outline-success" style="color:lime">投稿</button>
             </div>
         </form>
     </div>

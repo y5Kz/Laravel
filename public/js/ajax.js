@@ -22,7 +22,7 @@ $(function () {
             .done((res) => {
                 var html = ` 
                                     <tr>
-                                    <td scope="col" class='text-center'>${res.commentData.user['name']}<br>${res.commentData['reply']}<br>${res.commentData['created_at']}</td>
+                                    <td scope="col" class='text-center' style="color:lime">${res.commentData.user['name']}<br>${res.commentData['reply']}<br>${res.commentData['created_at']}</td>
                                     </tr>
                                 `;
 

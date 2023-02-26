@@ -6,9 +6,9 @@
         <table class="table">
             <thead>
                 <tr>
-                    <th scope="col" class='text-center col-md-4'><a href="{{ route('limits.index') }}">投稿管理</a></th>
-                    <th scope="col" class='text-center col-md-4'>要望管理</th>
-                    <th scope="col" class='text-center col-md-4'><a href="{{ route('users.index') }}">ユーザー管理</a></th>
+                    <th scope="col" class='text-center col-md-4'><a href="{{ route('limits.index') }}" style="color:lime">投稿管理</a></th>
+                    <th scope="col" class='text-center col-md-4' style="color:white">要望管理</th>
+                    <th scope="col" class='text-center col-md-4'><a href="{{ route('users.index') }}" style="color:lime">ユーザー管理</a></th>
                 </tr>
             </thead>
         </table>
@@ -40,23 +40,21 @@
                     <input type="text" class="form-control" id="exampleFormControlInput1" name="req" placeholder="要望" @if(isset($request->req)) value="{{ $request->req }}" @endif>
                 </div>
                 <div class='row justify-content-center'>
-                    <button type='submit' class='btn btn-outline-success mt-1'>検索</button>
+                    <button type='submit' class='btn btn-outline-success mt-1' style="color:lime">検索</button>
                 </div>
             </form>
         </div>
         <table class="table">
             <thead>
                 <tr>
-                    <th scope="col" class='text-center col-md-12'>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;ゲームタイトル要望</th>
+                    <th scope="col" class='text-center col-md-12' style="color:white">&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;ゲームタイトル要望</th>
                 </tr>
             </thead>
             <tbody>
                 @foreach($reqs as $req)
                 <tr>
-                    <th scope='col'>
+                    <th scope='col' style="color:white" class='list'>
                         {{ $req['req'] }}
-                    </th>
-                    <th scope='col' class='text-right'>
                         <form action="{{route('reqs.destroy', ['req' => $req['id']]) }}" method="post" class="float-right">
                             @csrf
                             @method('delete')
@@ -70,3 +68,8 @@
     </div>
 </div>
 @endsection
+<style>
+    .list:hover {
+        background-color: #003b19;
+    }
+</style>

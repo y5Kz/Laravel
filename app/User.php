@@ -48,4 +48,11 @@ class User extends Authenticatable
     {
         $this->notify(new UserResetPassword($token));
     }
+
+    const THEME_NORMAL = 'normal';
+    const THEME_DARK = 'dark';
+    const THEMES = [
+        self::THEME_NORMAL => 'ノーマル',
+        self::THEME_DARK => 'ダークモード'
+    ];
 }
