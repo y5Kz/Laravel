@@ -84,9 +84,9 @@ class MyController extends Controller
         $post = new post;
 
         if (empty($gameid)) {
-            $pos = $post->where('user_id', '=', $user->id)->where('del_flg', '=', 0)->orderby('created_at', 'DESC')->paginate(10);
+            $pos = $post->where('user_id', '=', $user->id)->where('del_flg', '=', 0)->orderby('created_at', 'DESC')->paginate(11);
         } else {
-            $pos = $post->where('user_id', '=', $user->id)->where('del_flg', '=', 0)->where('game_id', '=', $gameid)->orderby('created_at', 'DESC')->paginate(10);
+            $pos = $post->where('user_id', '=', $user->id)->where('del_flg', '=', 0)->where('game_id', '=', $gameid)->orderby('created_at', 'DESC')->paginate(11);
         }
 
         $game = new game;
@@ -146,9 +146,9 @@ class MyController extends Controller
         $post = new post;
 
         if (empty($gameid)) {
-            $pos = $post->where('user_id', '=', $user->id)->where('del_flg', '=', 0)->orderby('created_at', 'DESC')->paginate(10);
+            $pos = $post->where('user_id', '=', $user->id)->where('del_flg', '=', 0)->orderby('created_at', 'DESC')->paginate(11);
         } else {
-            $pos = $post->where('user_id', '=', $user->id)->where('del_flg', '=', 0)->where('game_id', '=', $gameid)->orderby('created_at', 'DESC')->paginate(10);
+            $pos = $post->where('user_id', '=', $user->id)->where('del_flg', '=', 0)->where('game_id', '=', $gameid)->orderby('created_at', 'DESC')->paginate(11);
         }
 
         $game = new game;

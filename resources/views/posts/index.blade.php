@@ -4,7 +4,7 @@
 <div class="container">
   <div class="row justify-content-center">
     <div class="form-group">
-      <label for="exampleFormControlSelect1">ゲームタイトル選択</label>
+      <label for="exampleFormControlSelect1"></label>
       <form action="" method="get">
         <select name='game_id' class="form-control" id="exampleFormControlSelect1">
           <option value=''></option>
@@ -21,7 +21,7 @@
           <input type="text" class="form-control" id="exampleFormControlInput1" name="title" placeholder="タイトル" @if(isset($request->title)) value="{{ $request->title }}" @endif>
         </div>
         <div class='row justify-content-center'>
-          <button type='submit' class='btn btn-outline-success mt-3' style="color:lime">検索</button>
+          <button type='submit' class='btn btn-outline-success' style="color:lime">検索</button>
         </div>
       </form>
     </div>

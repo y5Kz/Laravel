@@ -58,7 +58,7 @@ class PostController extends Controller
             $post->where('title', 'LIKE', "%{$title}%");
         }
 
-        $post = $post->orderby('created_at', 'DESC')->paginate(10);
+        $post = $post->orderby('created_at', 'DESC')->paginate(11);
 
         $game = Game::all();
 

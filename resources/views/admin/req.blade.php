@@ -47,7 +47,7 @@
         <table class="table">
             <thead>
                 <tr>
-                    <th scope="col" class='text-center col-md-12' style="color:white">&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;ゲームタイトル要望</th>
+                    <th scope="col" class='text-center col-md-12' style="color:white">ゲームタイトル要望</th>
                 </tr>
             </thead>
             <tbody>

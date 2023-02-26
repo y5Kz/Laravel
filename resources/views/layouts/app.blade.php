@@ -28,7 +28,7 @@
         <nav class="navbar navbar-expand-md navbar-light bg-black shadow-lg">
             <div class="container">
                 <a class="navbar-brand" href="{{ route('posts.index') }}">
-                    <img src="{{ asset('storage/images/EsportsBord.png') }}" alt="EsportsBord" style="color:lime" width="300vw" height="60vw">
+                    <img src="{{ asset('storage/images/EsportsBord.png') }}" alt="EsportsBord" style="color:lime" width="350vw" height="70vw">
                 </a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                     <span class="navbar-toggler-icon"></span>
@@ -60,15 +60,15 @@
 
                             <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
 
-                                <a class="dropdown-item" href="{{ route('posts.create')}}">新規投稿作成</a>
+                                <a class="dropdown-item menu" href="{{ route('posts.create')}}" style="color:lime">新規投稿作成</a>
 
-                                <a class="dropdown-item" href="{{ route('mys.index')}}">マイページ</a>
+                                <a class="dropdown-item menu" href="{{ route('mys.index')}}" style="color:lime">マイページ</a>
 
                                 @if(Auth::user()->role ===0)
-                                <a class="dropdown-item" href="{{ route('limits.index')}}" style="color:maroon">管理者ページ</a>
+                                <a class="dropdown-item menu" href="{{ route('limits.index')}}" style="color:lime">管理者ページ</a>
                                 @endif
-                                <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();
-                                                     document.getElementById('logout-form').submit();" style="color:red">
+                                <a class="dropdown-item rog" href="{{ route('logout') }}" onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();" style="color:white">
                                     {{ __('ログアウト') }}
                                 </a>
 
@@ -89,5 +89,14 @@
         </main>
     </div>
 </body>
+<style>
+    .menu:hover {
+        background-color: #003b19;
+    }
+
+    .rog:hover {
+        background-color: red;
+    }
+</style>
 
 </html>

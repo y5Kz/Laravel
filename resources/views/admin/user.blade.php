@@ -26,7 +26,7 @@
         <table class="table">
             <thead>
                 <tr>
-                    <th scope="col" class='text-center col-md-12' style="color:white">&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;ユーザー</th>
+                    <th scope="col" class='text-center col-md-12' style="color:white">ユーザー</th>
                 </tr>
             </thead>
             <tbody>
